@@ -1,16 +1,15 @@
-# task_todo_app
+# Todo App
+Mobile application for All Events Category.
 
-A new Flutter project.
+## Version : 1.0.0 Date : 18-03-2024
+------------------------------------------
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Creating the App: We'll develop a mobile app that works on both Android and iOS platforms using Flutter.
+- Todo Creation: Users can create todos with a title, category, and overdue date.
+- Local Storage: Todo data will be saved locally using Shared Preferences, ensuring data persistence across app sessions.
+- Dashboard Display: Users will see a list of todo tasks on the dashboard screen.
+- Task Deletion: Users can delete a selected task by swiping it from the list.
+- Light and Dark Modes: The app will have both light and dark mode options for users to choose from.
+- MVC Architecture: We'll structure the app following the Model-View-Controller (MVC) architecture pattern to organize code and separate concerns.
+- State Management with GetX: GetX, a state management library, will be used to handle the app's state effectively.
+- Responsive UI: The app will have a responsive user interface that adapts to different screen sizes, ensuring it looks good on both mobile phones and tablets.
