@@ -5,7 +5,7 @@ import '../Models/TaskModel.dart';
 
 class TaskController extends GetxController {
   final _tasks = RxList<Task>([]);
-  final _selectedCategory = RxString(''); // Category filter
+  final selectedCategory = RxString('Work'); // Category filter
   List<Task> get allTasks => _tasks.toList();
   final List<String> categories = [
     'Work',
@@ -60,12 +60,12 @@ class TaskController extends GetxController {
   }
 
   void updateCategory(String category) {
-    _selectedCategory.value = category;
+    selectedCategory.value = category;
     update();
   }
 
   List<Task> get filteredTasks => _tasks
       .where((task) =>
-          task.category.isEmpty || task.category == _selectedCategory.value)
+          task.category.isEmpty || task.category == selectedCategory.value)
       .toList();
 }

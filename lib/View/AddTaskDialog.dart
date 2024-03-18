@@ -4,6 +4,8 @@ import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:task_todo_app/Custome_Functions/Colors/constants.dart';
 
+import '../Controller/TaskController.dart';
+
 class AddTaskDialog extends StatelessWidget {
   final void Function(String title, String category, DateTime? dueDate)
       onAddTask;
@@ -14,14 +16,14 @@ class AddTaskDialog extends StatelessWidget {
 
   final TextEditingController _textController = TextEditingController();
   final _dueDateController = TextEditingController();
-  final _selectedCategory = TextEditingController();
+  // final selectedCategory = TextEditingController();
+  final controller = Get.put(TaskController()); // GetX instance
 
   // Initial category
   @override
   void dispose() {
     _textController.dispose();
     _dueDateController.dispose();
-    _selectedCategory.dispose();
   }
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
@@ -59,20 +61,25 @@ class AddTaskDialog extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 5.0, top: 10),
-                  child: DropdownButton<String>(
-                      value: 'Work',
-                      isExpanded: true,
-                      items: categories.map((String value) {
-                        return DropdownMenuItem<String>(
-                          value: value,
-                          child: Text(value),
-                        );
-                      }).toList(),
-                      onChanged: (String? value) {
-                        _selectedCategory.text =
-                            value!; // Update selected value
-                      }),
+                  padding: EdgeInsets.only(bottom: 5.0, top: 10),
+                  child: Obx(
+                    () => DropdownButton<String>(
+                        value: controller.selectedCategory.value,
+                        isExpanded: true,
+                        items: categories.map((String value) {
+                          return DropdownMenuItem<String>(
+                            value: value,
+                            child: Text(value),
+                          );
+                        }).toList(),
+                        onChanged: (value) {
+                          print(value);
+                          controller.selectedCategory.value = value.toString();
+                          controller.updateCategory(
+                              controller.selectedCategory.value);
+                          // Update selected value
+                        }),
+                  ),
                 ),
                 TextFormField(
                   validator: (value) {
@@ -118,9 +125,9 @@ class AddTaskDialog extends StatelessWidget {
                 if (_formKey.currentState!.validate()) {
                   final title = _textController.text.trim();
                   if (title.isNotEmpty) {
-                    onAddTask(title, _selectedCategory.text,
+                    onAddTask(title, controller.selectedCategory.value,
                         DateTime.parse(_dueDateController.text));
-                    Get.back();
+                    Get.back(closeOverlays: true);
                     Get.snackbar('Successfully', 'Record Added',
                         backgroundColor: Colors.green,
                         icon: Icon(
