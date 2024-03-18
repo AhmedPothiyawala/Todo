@@ -4,7 +4,7 @@ Mobile application for All Events Category.
 ## Version : 1.0.0 Date : 18-03-2024
 ------------------------------------------
 
-- Creating the App: We'll develop a mobile app that works on both Android and iOS platforms using Flutter.
+- Creating the App: Developed a mobile app that works on both Android and iOS platforms using Flutter.
 - Todo Creation: Users can create todos with a title, category, and overdue date.
 - Local Storage: Todo data will be saved locally using Shared Preferences, ensuring data persistence across app sessions.
 - Dashboard Display: Users will see a list of todo tasks on the dashboard screen.
