@@ -10,6 +10,6 @@ Mobile application for All Events Category.
 - Dashboard Display: Users will see a list of todo tasks on the dashboard screen.
 - Task Deletion: Users can delete a selected task by swiping it from the list.
 - Light and Dark Modes: The app will have both light and dark mode options for users to choose from.
-- MVC Architecture: We'll structure the app following the Model-View-Controller (MVC) architecture pattern to organize code and separate concerns.
+- MVC Architecture: Structured the app following the Model-View-Controller (MVC) architecture pattern to organize code and separate concerns.
 - State Management with GetX: GetX, a state management library, will be used to handle the app's state effectively.
 - Responsive UI: The app will have a responsive user interface that adapts to different screen sizes, ensuring it looks good on both mobile phones and tablets.
