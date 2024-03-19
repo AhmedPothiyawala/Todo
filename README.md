@@ -13,3 +13,4 @@ Mobile application for To-Do List.
 - MVC Architecture: Structured the app following the Model-View-Controller (MVC) architecture pattern to organize code and separate concerns.
 - State Management with GetX: GetX, a state management library, will be used to handle the app's state effectively.
 - Responsive UI: The app will have a responsive user interface that adapts to different screen sizes, ensuring it looks good on both mobile phones and tablets.
+- Unit Testing: The tasks of adding and deleting were successfully tested through unit testing. 
