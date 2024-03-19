@@ -1,5 +1,5 @@
 # Todo App
-Mobile application for All Events Category.
+Mobile application for To-Do List.
 
 ## Version : 1.0.0 Date : 18-03-2024
 ------------------------------------------
