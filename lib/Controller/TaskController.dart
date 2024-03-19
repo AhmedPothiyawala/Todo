@@ -50,13 +50,6 @@ class TaskController extends GetxController {
     _tasks.remove(task);
     Storage.saveTasks(_tasks.toList());
     update();
-    Get.snackbar('Deleted', task.title,
-        backgroundColor: Colors.red,
-        icon: Icon(
-          Icons.delete,
-          size: 30,
-        ),
-        snackPosition: SnackPosition.TOP);
   }
 
   void updateCategory(String category) {

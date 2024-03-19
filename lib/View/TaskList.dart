@@ -47,7 +47,16 @@ class TaskList extends StatelessWidget {
                 return Dismissible(
                     key: ValueKey(task.id),
                     background: Container(color: Colors.red),
-                    onDismissed: (_) => taskController.deleteTask(task),
+                    onDismissed: (_) {
+                      taskController.deleteTask(task);
+                      Get.snackbar('Deleted', task.title,
+                          backgroundColor: Colors.red,
+                          icon: Icon(
+                            Icons.delete,
+                            size: 30,
+                          ),
+                          snackPosition: SnackPosition.TOP);
+                    },
                     child: Card(
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15),
